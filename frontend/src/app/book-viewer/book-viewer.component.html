@@ -1,2 +1,5 @@
-<p>book-viewer works!</p>
-<p>{{ book }}</p>
+<h1 *ngIf="book.length == 0">No book provided try again</h1>
+<ng-container *ngIf="book.length > 0">
+    <span>{{ book[currentLine] != '' ? book[currentLine] : "You've reached the end of your book!" }}</span>
+    <button *ngIf="book[currentLine] != ''" (click)="nextLine()">Next Line</button>
+</ng-container>
