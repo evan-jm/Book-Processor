@@ -1,6 +1,8 @@
-<ng-container *ngIf="book.length == 0">
-  <app-book-importer (bookUpload)="bookUpload($event.target.value)"></app-book-importer>
-</ng-container>
-<ng-container *ngIf="book.length > 0">
-  <app-book-viewer [book]="book"></app-book-viewer>
-</ng-container>
+<div class="app">
+  <ng-container *ngIf="book.length == 0">
+    <app-book-importer (bookUpload)="bookUpload($event)"></app-book-importer>
+  </ng-container>
+  <ng-container *ngIf="book.length > 0">
+    <app-book-viewer [book]="book"></app-book-viewer>
+  </ng-container>
+</div>
