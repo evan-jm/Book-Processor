@@ -1,20 +1,18 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { BookViewerComponent } from './book-viewer/book-viewer.component';
+import { BookImporterComponent } from './book-importer/book-importer.component';
+import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [BookViewerComponent, BookImporterComponent, NgIf],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  private text: string[] = [];
+  public book: string[] = [];
 
-  public onChange(book: string) {
-    this.text = book.split('.');
-  }
-
-  public onSubmit() {
-    console.log(this.text);
+  public bookUpload(book: string[]) {
+    this.book = book;
   }
 }
